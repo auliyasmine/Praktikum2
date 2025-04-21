@@ -3,134 +3,128 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LAPORAN TEORI</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Laporan Praktikum</title>
   <style>
-    body.neat {
-      background-color: #ffe6f0;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffeef5;
       color: #333;
-      font-family: 'Segoe UI', sans-serif;
+      transition: all 0.3s ease;
     }
 
-    body.messy {
-      background-color: yellow;
-      color: lime;
-      font-family: 'Comic Sans MS', cursive;
-    }
-
-    .content {
-      margin: 2rem;
-    }
-
-    h1, h2 {
+    header {
+      background-color: #ffb6c1;
+      color: white;
       text-align: center;
+      padding: 2rem 1rem;
     }
 
-    .toggle-btn {
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      margin-top: 0.5rem;
+      font-weight: normal;
+      font-size: 1.25rem;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      border-left: 4px solid #ffb6c1;
+      padding-left: 1rem;
+    }
+
+    h3 {
+      color: #c71585;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .switch-btn {
       position: fixed;
       top: 1rem;
       right: 1rem;
-    }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    .section h3 {
+      padding: 0.5rem 1rem;
+      background-color: #c71585;
+      color: white;
+      border: none;
+      border-radius: 20px;
       cursor: pointer;
-      text-decoration: underline;
-      color: #d63384;
+      z-index: 999;
+    }
+
+    .messy {
+      background-color: #ff00ff;
+      color: yellow;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
     }
   </style>
 </head>
-<body class="neat">
-  <div class="toggle-btn">
-    <button class="btn btn-dark" onclick="toggleMode()">Tukar Tampilan</button>
-  </div>
-
-  <div class="content">
+<body>
+  <button class="switch-btn" onclick="toggleTheme()">Ganti Tampilan</button>
+  <header>
     <h1>LAPORAN TEORI</h1>
-    <h2>Nama | NIM</h2>
-
-    <div class="section">
-      <h3 onclick="confirmToggle(this)">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
-      <p>
-        Dua teknologi penting dalam web development CSS dan JavaScript memiliki peran yang berbeda namun saling melengkapi. CSS digunakan untuk mengatur tampilan layout halaman web, seperti warna, font, posisi elemen...<br>
-        Di sisi lain, JavaScript digunakan untuk memberikan tingkat interaktif dan responsif ke halaman web...<br>
-      </p>
-    </div>
-
-    <div class="section">
-      <h3 onclick="confirmToggle(this)">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
-      <p>
-        Ada beberapa cara dalam melakukan integrasi CSS dan JavaScript ketika melakukan pengembangan web...<br>
-        Selain itu, JavaScript juga dapat digunakan untuk memanipulasi gaya (style) elemen HTML secara dinamis...<br>
-      </p>
-    </div>
-
-    <div class="section">
-      <h3 onclick="confirmToggle(this)">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
-      <p>
-        Dengan menggunakan CSS, web developer dapat mengontrol tampilan dan tata letak halaman secara konsisten...<br>
-        Sementara itu, JavaScript memungkinkan developer menambahkan interaktivitas dan dinamika ke dalam halaman web...<br>
-      </p>
-    </div>
-
-    <div class="section">
-      <h3 onclick="confirmToggle(this)">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
-      <p>
-        Bootstrap adalah kerangka kerja front-end yang mempermudah dan mempercepat pengembangan web...<br>
-        Selain itu, Bootstrap memiliki dokumentasi yang lengkap dan komunitas yang besar...<br>
-      </p>
-    </div>
-
-    <div class="section">
-      <h3 onclick="confirmToggle(this)">5. Contoh penggunaan Bootstrap dan penjelasannya</h3>
-      <p>
-        Salah satu contoh penggunaan Bootstrap yang paling umum adalah untuk membuat navbar (navigasi bar) yang responsif...<br>
-        Contoh kode HTML:<br>
-        <pre><code>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">MySite</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-        </code></pre>
-      </p>
-    </div>
-  </div>
-
+    <h2>Aulia Yasmin | 202332081</h2>
+  </header>
+  <main>
+    <section>
+      <h3 onclick="toggleSection('section1')">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+      <div id="section1">
+        <p>CSS dan JavaScript adalah dua teknologi penting dalam pengembangan web yang memiliki peran berbeda namun saling melengkapi. CSS digunakan untuk mengatur tampilan dan tata letak halaman web, seperti warna, font, dan posisi elemen, sehingga membuat halaman web lebih menarik dan mudah dibaca. Dengan CSS, pengembang dapat memisahkan konten dari presentasi, memungkinkan perubahan tampilan tanpa mengubah struktur HTML.</p>
+        <p>Sementara itu, JavaScript digunakan untuk menambahkan interaktivitas dan dinamika pada halaman web. Dengan JavaScript, pengguna dapat berinteraksi dengan halaman melalui klik, input formulir, atau pergerakan mouse, yang kemudian dapat memicu perubahan konten atau tampilan secara real-time tanpa perlu memuat ulang halaman. Hal ini membuat pengalaman pengguna lebih responsif dan menarik.</p>
+      </div>
+    </section>
+    <section>
+      <h3 onclick="toggleSection('section2')">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+      <div id="section2">
+        <p>Integrasi CSS dan JavaScript dalam pengembangan web dapat dilakukan dengan beberapa cara. CSS dapat ditambahkan langsung ke elemen HTML melalui atribut style, disisipkan dalam tag &lt;style&gt; di bagian &lt;head&gt;, atau dimuat dari file eksternal menggunakan tag &lt;link&gt;. JavaScript dapat disisipkan dalam tag &lt;script&gt; di bagian &lt;head&gt; atau sebelum penutup tag &lt;/body&gt;, atau dimuat dari file eksternal menggunakan atribut src dalam tag &lt;script&gt;.</p>
+        <p>Selain itu, JavaScript dapat digunakan untuk memanipulasi gaya elemen HTML secara dinamis. Misalnya, dengan menggunakan document.getElementById("id").style.property = "value", JavaScript dapat mengubah properti CSS seperti warna, ukuran, atau posisi elemen berdasarkan interaksi pengguna. Hal ini memungkinkan pengembangan halaman web yang lebih interaktif dan responsif terhadap tindakan pengguna.</p>
+      </div>
+    </section>
+    <section>
+      <h3 onclick="toggleSection('section3')">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+      <div id="section3">
+        <p>Penggunaan CSS memberikan berbagai keuntungan dalam pengembangan web. Dengan CSS, pengembang dapat mengontrol tampilan dan tata letak halaman secara konsisten, memisahkan konten dari presentasi, serta mengurangi duplikasi kode. CSS juga memungkinkan pembuatan desain yang responsif, menyesuaikan tampilan halaman dengan berbagai ukuran layar perangkat, sehingga meningkatkan pengalaman pengguna.</p>
+        <p>JavaScript, di sisi lain, memungkinkan penambahan interaktivitas dan dinamika pada halaman web. Dengan JavaScript, pengembang dapat membuat elemen yang merespons tindakan pengguna, seperti validasi formulir, animasi, atau pembaruan konten secara real-time. JavaScript juga kompatibel dengan semua browser modern dan didukung oleh komunitas besar, sehingga memudahkan pengembangan dan pemecahan masalah.</p>
+      </div>
+    </section>
+    <section>
+      <h3 onclick="toggleSection('section4')">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+      <div id="section4">
+        <p>Bootstrap adalah framework front-end yang memudahkan dan mempercepat proses pengembangan web. Dengan Bootstrap, pengembang dapat menggunakan komponen siap pakai seperti tombol, formulir, navigasi, dan lainnya, yang sudah dirancang dengan tampilan yang konsisten dan responsif. Hal ini mengurangi waktu dan usaha yang diperlukan untuk membuat elemen UI dari awal.</p>
+        <p>Selain itu, Bootstrap dirancang dengan pendekatan mobile-first, memastikan bahwa halaman web akan tampil dengan baik di berbagai perangkat, mulai dari ponsel hingga desktop. Bootstrap juga kompatibel dengan semua browser modern dan didukung oleh komunitas yang aktif, menyediakan dokumentasi lengkap dan berbagai sumber daya yang membantu pengembang dalam proses pengembangan.</p>
+      </div>
+    </section>
+    <section>
+      <h3 onclick="toggleSection('section5')">5. Contoh penggunaan Bootstrap dan fungsinya</h3>
+      <div id="section5">
+        <p>Salah satu contoh penggunaan Bootstrap yang paling umum adalah untuk membuat navbar (navigasi bar) yang responsif. Navbar adalah menu horizontal yang biasanya ada di bagian atas halaman web. Isinya bisa berupa nama website, dan beberapa tautan seperti "Home", "Tentang Kami", atau "Features". Dengan menggunakan Bootstrap, kita bisa membuat navbar dengan cepat dan tampilan yang sudah rapi, tanpa harus menulis banyak kode CSS sendiri.</p>
+        <img src="https://i.imgur.com/ZKsbAsB.png" alt="Contoh hasil navbar dengan Bootstrap" width="100%">
+      </div>
+    </section>
+  </main>
   <script>
-    function toggleMode() {
-      const body = document.body;
-      body.classList.toggle("neat");
-      body.classList.toggle("messy");
-    }
-
-    function confirmToggle(header) {
-      const p = header.nextElementSibling;
-      const result = confirm("Apakah Anda ingin menyembunyikan bagian ini?");
-      if (result) {
-        p.style.display = p.style.display === "none" ? "block" : "none";
+    function toggleSection(id) {
+      if (confirm("Ingin menyembunyikan bagian ini?")) {
+        const section = document.getElementById(id);
+        section.classList.toggle('hidden');
       }
     }
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    function toggleTheme() {
+      document.body.classList.toggle('messy');
+    }
+  </script>
 </body>
 </html>
